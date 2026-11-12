@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE - Computer Systems & Electronics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #1e293b;
+            --accent: #38bdf8;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0f172a 100%);
+            color: var(--white);
+            padding: 180px 2rem 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #94a3b8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--primary);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+        }
+
+        .contact-section {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
+            padding: 4rem 2rem;
+            margin-bottom: 50px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .contact-item p, .contact-item a {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        footer {
+            background: var(--secondary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">CSE <span>Systems</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h1><span>CSE</span> لأنظمة الحاسوب والأنظمة الإلكترونية</h1>
+        <p>نقدم أحدث الحلول التقنية المتقدمة، تركيب وصيانة كاميرات المراقبة، الشبكات، الطاقة الشمسية وأجهزة الحضور والانصراف.</p>
+        <a href="#contact" class="btn">تواصل معنا الآن</a>
+    </section>
+
+    <section id="services" class="section">
+        <div class="section-title">
+            <h2>خدماتنا الاحترافية</h2>
+            <p>نلبي احتياجات الأفراد والشركات بأعلى معايير الجودة والكفاءة</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-camera"></i>
+                <h3>كاميرات المراقبة</h3>
+                <p>تركيب وصيانة أنظمة المراقبة الأمنية المتقدمة لضمان أمان منشأتك على مدار الساعة.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>تنصيب الشبكات</h3>
+                <p>تصميم وتأسيس شبكات الحاسوب والبنية التحتية للتقنية بأعلى كفاءة وسرعة اتصال.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-solar-panel"></i>
+                <h3>الطاقة الشمسية</h3>
+                <p>توريد وتركيب أنظمة الطاقة الشمسية المستدامة لتوفير طاقة نظيفة ومستمرة بلا إنقطاع.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>صيانة الأجهزة الإلكترونية</h3>
+                <p>فحص وصيانة شاملة لمختلف الأجهزة الإلكترونية وحل المشاكل التقنية بدقة واحترافية.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-fingerprint"></i>
+                <h3>أجهزة الحضور والانصراف</h3>
+                <p>تركيب وبرمجة أجهزة البصمة والحضور والانصراف الحديثة لإدارة الموظفين بكفاءة.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-section">
+            <div class="section-title" style="margin-bottom: 2rem;">
+                <h2>تواصل معنا</h2>
+                <p>يسعدنا الرد على استفساراتكم وتقديم خدماتنا في أي وقت</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>أرقام الهواتف</h4>
+                    <p style="direction: ltr;">+249 900 997 800</p>
+                    <p style="direction: ltr;">+249 115 750 047</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>البريد الإلكتروني</h4>
+                    <a href="mailto:mazinhamid227@gmail.com">mazinhamid227@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - CSE (Computer Systems & Electronics)</p>
+    </footer>
+
+</body>
+</html>
